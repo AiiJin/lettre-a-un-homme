@@ -8,10 +8,10 @@
         <!--un id est spécifique à un élément à la diff d'une classe-->
         <div class="MSG">
             <img src="Arriere.png"  class="message" id="arriere"> 
-            <img src="Lettre.png" class="message" id="lettre">
+            <img src="Lettre.png"   class="message" id="lettre">
             <img src="Avant.png"    class="message" id="avant"> 
-            <div class="message" id="collider"></div>
-            <label class="message" id="text">Sors la lettre de l'enveloppe tdc</label>
+            <div class="message"    id="collider"></div>
+            <label class="message"  id="text">Sors la lettre de l'enveloppe tdc</label>
                 
             <!-- <div class="message" id="lettre"><img src="lettre.png"></div> -->
         </div>
@@ -19,25 +19,25 @@
             .MSG
             {
                 position: relative;
-                margin-left: 40%;
+                margin-left: 35%;
                 margin-top: 10%;
-                
             }
             .message
             {
                 position: absolute;
+                width: 30em;
             }
             #collider
             {
-                height: 25em;
-                width: 25em;
+                aspect-ratio: 1/1;
+                width: 100%;            
             }
             #text
             {
-                font-size: larger;
+                font-size: 20px;
                 font-style: italic;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                transform: translate(3em, 20em)
+                transform: translate(4em, 23em)
             }
         </style>
 
@@ -68,8 +68,8 @@
             {
                 if (isDragging == true) 
                 {
-                    let topValue = (event.clientY-offsetY) <= 0 ? (event.clientY -offsetY+"px") : 0;
-
+                    let topValue = (event.clientY-offsetY) <= 0 ? (event.clientY-offsetY+"px") : 0;
+                    
                     collider.style.marginLeft = event.clientX - offsetX + "px";
                     collider.style.marginTop = topValue;
                     
